@@ -1,0 +1,9 @@
+.item.submenu {
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.ui.vertical.tiny.steps {
+    padding-right: 0;
+}

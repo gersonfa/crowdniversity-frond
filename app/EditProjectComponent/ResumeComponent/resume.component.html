@@ -1,0 +1,51 @@
+<div class="ui grid">
+    <div class="row">
+        <h2 class="ui header">
+            <div class="content">
+                Resumen del proyecto
+                <div class="sub header">Una descripción más detallada de tu proyecto</div>
+            </div>
+        </h2>
+    </div>
+
+    <div class="row">
+        <div class="sixteen wide column">
+            <form class="ui equal width form">
+                <div class="field">
+                    <h3 class="ui header">
+                        Video
+                        <div class="sub header">Puedes agregar la URL de un video de YouTube que hable sobre tu proyecto.</div>
+                    </h3>
+                    <input type="text" placeholder="Video URL">
+                </div>
+                <br>
+                <h3 class="ui header">
+                    Poster Video
+                    <div class="sub header">Puedes agregar una imagén de superposición del video</div>
+                </h3>
+                <fancy-image-uploader [options]="options" (onUpload)="onUpload($event)"></fancy-image-uploader>
+
+                <!-- <fancy-image-uploader [options]="options" (onUpload)="onUpload($event)"></fancy-image-uploader> -->
+
+                <br>
+                <div class="field">
+                    <h3 class="ui header">
+                        Descripción general del proyecto
+                        <div class="sub header">Describe de forma breve el proyecto.</div>
+                    </h3>
+                    <textarea rows="3"></textarea>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="sixteen wide column">
+        <h3 class="ui header">
+            Resumen
+            <div class="sub header">Describe el proyecto con más detalle.</div>
+        </h3>
+        <quill-editor [(ngModel)]="resume"></quill-editor>
+        <br>
+        <button class="ui right floated button huge orange" (click)="updateProject()">Guardar y continuar</button>
+    </div>
+</div>

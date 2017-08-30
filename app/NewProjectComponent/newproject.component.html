@@ -1,0 +1,18 @@
+<div class="ui grid container" style="margin-top: 4em;">
+    <div class="row">
+        <h1 class="ui header">Empieza un nuevo proyecto
+            <div class="sub header">Recauda fondos para poder empezar tu idea.</div>
+        </h1>
+    </div>
+    <div class="row centered">
+        <div class="ten wide column" style="margin-top: 3em;">
+            <form [formGroup]="projectForm" class="ui massive form">
+                <div class="field">
+                    <input type="text" placeholder="Nombre de tu proyecto" formControlName="projectName">
+                </div>
+            </form>
+            
+            <button class="huge fluid ui button" style="margin-top: 0.5em;" [disabled]="!projectForm.valid" (click)="createProject()">Crear proyecto</button>
+        </div>
+    </div>
+</div>

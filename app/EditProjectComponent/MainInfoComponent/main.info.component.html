@@ -1,0 +1,72 @@
+<div class="ui grid">
+    <div class="row">
+        <h2 class="ui header">
+            <div class="content">
+                Información principal
+                <div class="sub header">Establece la información principal de tu proyecto.</div>
+            </div>
+        </h2>
+    </div>
+
+    <div class="row">
+        <div class="sixteen wide column">
+            <form class="ui big form" [formGroup]="projectForm">
+                <div class="field">
+                    <label>Nombre del proyecto</label>
+                    <input type="text" placeholder="Nombre del proyecto" formControlName="projectName">
+                </div>
+                <br>
+                <div formGroupName="principalInformation">
+                    <div class="field">
+                        <label>Eslogan del proyecto</label>
+                        <input type="text" placeholder="Eslogan del proyecto" formControlName="sloganProject">
+                    </div>
+                    <div class="fields">
+                        <div class="required ten wide field">
+                            <label>Meta de dinero</label>
+                            <input type="number" placeholder="Establece una meta de dinero" formControlName="moneyReach">
+                        </div>
+                        <div class="required six wide field">
+                            <label>Días de colección</label>
+                            <input type="number" min="20" value="40" max="60" formControlName="daysCollection">
+                        </div>
+                    </div>
+                    <br>
+                    <div class="equal width fields">
+                        <div class="required field">
+                            <label>País</label>
+                            <select [(ngModel)]="selectedCountry" formControlName="country">
+                            <option *ngFor="let country of countries">{{country}}</option>
+                        </select>
+                        </div>
+                        <div class="required field">
+                            <label>Ciudad</label>
+                            <input type="text" placeholder="Ciudad" formControlName="city">
+                        </div>
+                        <div class="required field">
+                            <label>Universidad</label>
+                            <input type="text" placeholder="Universidad" formControlName="university">
+                        </div>
+                    </div>
+                    <br>
+                    <div class="equal width fields">
+                        <div class="required field">
+                            <label>Categoría</label>
+                            <select [(ngModel)]="selectedCategory" formControlName="category">
+                            <option *ngFor="let category of categories">{{category}}</option>
+                        </select>
+                        </div>
+                        <div class="required field">
+                            <label>Etapa del proyecto</label>
+                            <select [(ngModel)]="selectedStage" formControlName="projectStage">
+                            <option *ngFor="let stage of stages">{{stage}}</option>
+                        </select>
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <button class="ui right floated button huge orange" [disabled]="projectForm.invalid" (click)="updateMainInformation()">Guardar y continuar</button>
+            </form>
+        </div>
+    </div>
+</div>

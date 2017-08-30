@@ -1,0 +1,26 @@
+<div class="ui centered grid">
+    <div class="five wide column" style="margin-top: 4em;">
+        <button class="big fluid ui facebook button" (click)="fbLogin()">
+            <i class="facebook icon"></i>
+            Iniciar sesión con Facebook
+        </button>
+        <h4 class="ui horizontal divider header">
+            Inicia sesión con tu Email
+        </h4>
+        <div class="ui message error" *ngIf="errorMessage">
+                <p>{{errorMessage}}</p>
+            </div>
+        <div class="ui large active loader" style="margin-top: 1.5em;" *ngIf="isLoading"></div>
+        <form class="ui form" style="margin-top: 2em;" (ngSubmit)="localLogin()" [formGroup]="userForm" *ngIf="!isLoading">
+            <div class="field">
+                <input type="email" placeholder="Email" formControlName="email">
+            </div>
+            <div class="field">
+                <input type="password" placeholder="Contraseña" formControlName="password">
+            </div>
+            <button class="ui fluid button" type="submit" [disabled]="!userForm.valid">Iniciar sesión</button>
+        </form>
+        <div class="ui clearing divider"></div>
+        <p>¿No tienes una cuenta?</p><a routerLink="/register">Registrarme</a>
+    </div>
+</div>

@@ -1,0 +1,35 @@
+<h1>Proyectos</h1>
+
+<div class="ui tiny menu">
+        <div class="right menu">
+            <div class="item">
+                <div class="ui primary button" routerLink="/project/new">
+                <i class="plus icon"></i>
+                Crear proyecto</div>
+            </div>
+        </div>
+    </div>
+<div class="ui grid">
+    <div class="five wide column" *ngFor="let project of projects">
+        <div class="ui card">
+            <div class="image">
+                <img src="{{project.principalInformation.imageCard}}">
+            </div>
+            <div class="content">
+                <div class="header">
+                    {{project.projectName}}
+                </div>
+                <!--
+                <div class="meta">
+                    Friends of Veronika
+                </div> -->
+            </div>
+            <div class="extra content">
+                <div class="ui two buttons">
+                    <div class="ui basic green button" (click)="selectProject(project)" routerLink="/project/edit/{{project._id}}">Editar</div>
+                    <div class="ui basic red button">Eliminar</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,46 @@
+{
+  "name": "crowdniversity-front",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack",
+    "build:prod": "webpack --config webpack.config.js --env.MODE=prod",
+    "start": "webpack-dev-server"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@angular/common": "^4.3.6",
+    "@angular/compiler": "^4.3.6",
+    "@angular/core": "^4.3.6",
+    "@angular/forms": "^4.3.6",
+    "@angular/http": "^4.3.6",
+    "@angular/platform-browser": "^4.3.6",
+    "@angular/platform-browser-dynamic": "^4.3.6",
+    "@angular/router": "^4.3.6",
+    "@angular/upgrade": "^4.3.6",
+    "angular2-jwt": "^0.2.3",
+    "ng-semantic": "^1.1.13",
+    "ng2-fancy-image-uploader": "^1.6.1",
+    "ngx-facebook": "^2.4.0",
+    "ngx-quill": "^1.4.0",
+    "reflect-metadata": "^0.1.10",
+    "rxjs": "^5.4.3",
+    "zone.js": "^0.8.17"
+  },
+  "devDependencies": {
+    "@types/core-js": "^0.9.43",
+    "@types/node": "^8.0.25",
+    "angular-router-loader": "^0.5.0",
+    "angular2-template-loader": "^0.6.0",
+    "awesome-typescript-loader": "^3.2.1",
+    "raw": "^0.1.4",
+    "raw-loader": "^0.5.1",
+    "ts-loader": "2.3.1",
+    "typescript": "2.4.2",
+    "typings": "2.1.1",
+    "webpack": "3.3.0",
+    "webpack-dev-server": "2.5.1"
+  }
+}
